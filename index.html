@@ -1,115 +1,61 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Félix Wilhelmy | Machine Learning Engineer</title>
-  <meta name="description" content="Software Engineer specializing in Machine Learning, Applied AI, and Quantum Computing. View my professional résumé.">
-
-  <!-- LinkedIn preview -->
+  <title>Résumé / CV | Félix Wilhelmy</title>
+  <meta name="description" content="Download Félix Wilhelmy's résumé in English or French.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Félix Wilhelmy | Machine Learning Engineer">
-  <meta property="og:description" content="Software Engineering · Deep Learning · Applied AI · Quantum Computing">
+  <meta property="og:title" content="Félix Wilhelmy | Résumé / CV">
+  <meta property="og:description" content="Download my résumé in English or French.">
   <meta property="og:url" content="https://fwilhelmy.github.io/">
-  <meta property="og:image" content="https://fwilhelmy.github.io/preview.png">
 
   <style>
     * { box-sizing: border-box; }
     body {
+      min-height: 100vh;
+      min-height: 100svh;
       margin: 0;
-      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-      background: #f7f8fb;
-      color: #172238;
-      line-height: 1.6;
-    }
-    header {
-      background: #14243f;
-      color: white;
-      padding: 75px 24px;
-      text-align: center;
-    }
-    h1 { font-size: clamp(2rem, 5vw, 3rem); margin: 0; }
-    .subtitle { font-size: 1.2rem; opacity: .9; }
-    .summary { max-width: 680px; margin: 20px auto; opacity: .85; }
-    .buttons {
+      padding: 24px;
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 30px;
-    }
-    .button {
-      display: inline-block;
-      padding: 12px 24px;
-      background: white;
-      color: #14243f;
-      border-radius: 7px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .button.secondary {
-      background: transparent;
-      border: 1px solid #b7c4d9;
-      color: white;
-    }
-    main { max-width: 960px; margin: 40px auto; padding: 0 20px; }
-    h2 { font-size: 1.4rem; }
-    iframe {
-      width: 100%;
-      height: 950px;
-      border: 1px solid #dce2eb;
-      border-radius: 8px;
-      background: white;
-    }
-    footer {
+      align-items: center;
+      background: #f8fafc;
+      color: #1e293b;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
       text-align: center;
-      padding: 30px;
-      color: #687589;
     }
-    footer a { color: inherit; }
-    @media(max-width: 600px) {
-      header { padding: 50px 20px; }
-      iframe { height: 650px; }
+    main { width: 100%; max-width: 480px; }
+    p { margin: 0 0 24px; font-size: 1rem; line-height: 1.6; }
+    .downloads { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    a {
+      display: inline-block;
+      min-width: 160px;
+      padding: 12px 20px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      background: #fff;
+      color: #1e293b;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color .15s, border-color .15s;
+    }
+    a:hover { background: #eef2f7; border-color: #94a3b8; }
+    a:focus-visible { outline: 3px solid #2563eb; outline-offset: 3px; }
+    @media (max-width: 380px) {
+      .downloads { flex-direction: column; }
+      a { width: 100%; }
     }
   </style>
 </head>
-
 <body>
-  <header>
-    <h1>Félix Wilhelmy</h1>
-    <p class="subtitle">Machine Learning Engineer</p>
-    <p class="summary">
-      Software Engineering · Deep Learning · Applied AI · Quantum Computing
-    </p>
-
-    <div class="buttons">
-      <a class="button" href="fwil_resume_ml_eng.pdf" target="_blank">
-        English Résumé
-      </a>
-      <a class="button secondary" href="fwil_resume_ml_fr.pdf" target="_blank">
-        CV Français
-      </a>
-    </div>
-  </header>
-
   <main>
-    <h2>Résumé</h2>
-    <p>Explore my professional experience, research, and technical projects.</p>
-
-    <iframe src="fwil_resume_ml_eng.pdf" title="English résumé"></iframe>
-    <p>
-      <a href="fwil_resume_ml_eng.pdf" download>Download PDF</a>
-      ·
-      <a href="fwil_resume_ml_fr.pdf" target="_blank">Version française</a>
-    </p>
+    <p>My résumé is available in English and French.</p>
+    <div class="downloads">
+      <a href="fwil_resume_ml_eng.pdf" download="Felix_Wilhelmy_Resume_EN.pdf" lang="en">Download English</a>
+      <a href="fwil_resume_ml_fr.pdf" download="Felix_Wilhelmy_CV_FR.pdf" lang="fr">Télécharger en français</a>
+    </div>
   </main>
-
-  <footer>
-    <a href="https://github.com/fwilhelmy">GitHub</a>
-    ·
-    <a href="https://www.linkedin.com/in/felix-wilhelmy/">LinkedIn</a>
-  </footer>
 </body>
 </html>
