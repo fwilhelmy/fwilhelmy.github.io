@@ -72,7 +72,7 @@
       gap: 12px;
       flex-wrap: wrap;
     }
-    a {
+    .links a {
       display: inline-flex;
       justify-content: center;
       align-items: center;
@@ -89,17 +89,17 @@
       text-decoration: none;
       transition: background-color .15s, border-color .15s, transform .15s;
     }
-    a:first-child {
+    .links a:first-child {
       background: #edf3fc;
       border-color: #edf3fc;
       color: #122742;
     }
-    a:hover {
+    .links a:hover {
       background: rgba(255, 255, 255, .19);
       border-color: rgba(255, 255, 255, .60);
       transform: translateY(-2px);
     }
-    a:first-child:hover {
+    .links a:first-child:hover {
       background: #ffffff;
       border-color: #ffffff;
     }
@@ -108,18 +108,35 @@
       outline-offset: 4px;
     }
     .arrow { font-size: 1.05rem; font-weight: 500; }
-    .note {
-      margin: 24px 0 0;
-      color: #9cb3d5;
-      font-size: .78rem;
+    .contact {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+      padding-top: 23px;
+      border-top: 1px solid rgba(213, 225, 243, .16);
+    }
+    .contact a {
+      color: #aebfd8;
+      font-size: .87rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color .15s;
+    }
+    .contact a:hover {
+      color: #fff;
+      text-decoration: underline;
+      text-underline-offset: 4px;
     }
     @media (max-width: 480px) {
       .links { flex-direction: column; }
-      a { width: 100%; }
+      .links a { width: 100%; }
     }
     @media (prefers-reduced-motion: reduce) {
-      a { transition: none; }
-      a:hover { transform: none; }
+      .links a, .contact a { transition: none; }
+      .links a:hover { transform: none; }
     }
   </style>
 </head>
@@ -137,7 +154,11 @@
         CV en français <span class="arrow" aria-hidden="true">↗</span>
       </a>
     </nav>
-    <p class="note">PDF · Opens in a new tab</p>
+    <nav class="contact" aria-label="Contact and profiles">
+      <a href="https://www.linkedin.com/in/felix-wilhelmy/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://github.com/fwilhelmy" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="mailto:fwilhelmy@hotmail.com" aria-label="Email fwilhelmy@hotmail.com">Email</a>
+    </nav>
   </main>
 </body>
 </html>
