@@ -4,161 +4,261 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0a1931">
-  <title>Félix Wilhelmy | Résumé / CV</title>
-  <meta name="description" content="View Félix Wilhelmy's résumé in English or French.">
+  <meta name="description" content="Browse Félix Wilhelmy's software engineering, machine learning, and quantum computing résumés in English or French.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Félix Wilhelmy | Résumé / CV">
-  <meta property="og:description" content="View my résumé in English or French.">
+  <meta property="og:description" content="Browse six résumé versions in English and French.">
   <meta property="og:url" content="https://fwilhelmy.github.io/">
-
+  <title>Félix Wilhelmy | Résumé / CV</title>
   <style>
     :root {
       color-scheme: dark;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --background: #0a1931;
+      --surface: rgba(255, 255, 255, .045);
+      --border: rgba(213, 225, 243, .18);
+      --muted: #b1c0d8;
+      --text: #f8fafc;
+      --accent: #edf3fc;
     }
     * { box-sizing: border-box; }
     body {
       min-height: 100vh;
-      min-height: 100svh;
       margin: 0;
-      padding: 24px;
-      display: grid;
-      place-items: center;
-      background:
-        radial-gradient(ellipse 70% 65% at 50% 34%, rgba(38, 72, 121, .38), transparent 80%),
-        #0a1931;
-      color: #f8fafc;
-      text-align: center;
+      background: radial-gradient(ellipse 75% 45% at 50% 0%, rgba(38, 72, 121, .32), transparent 85%), var(--background);
+      color: var(--text);
     }
-    main {
-      width: min(100%, 570px);
-      padding: clamp(36px, 7vw, 64px) clamp(22px, 6vw, 54px);
-      border: 1px solid rgba(213, 225, 243, .14);
-      border-radius: 18px;
-      background: rgba(255, 255, 255, .035);
-      box-shadow: 0 28px 85px rgba(0, 0, 0, .19);
+    .page {
+      width: min(100%, 1040px);
+      margin: 0 auto;
+      padding: clamp(28px, 5vw, 56px) clamp(16px, 4vw, 32px) 32px;
     }
+    header { text-align: center; margin-bottom: 30px; }
     .eyebrow {
-      margin: 0 0 14px;
+      margin: 0 0 12px;
       color: #9cb3d5;
-      font-size: .72rem;
+      font-size: .74rem;
       font-weight: 700;
-      letter-spacing: .19em;
+      letter-spacing: .17em;
       text-transform: uppercase;
     }
     h1 {
       margin: 0;
-      font-size: clamp(2rem, 6vw, 3rem);
+      font-size: clamp(2rem, 5vw, 2.8rem);
       font-weight: 650;
       letter-spacing: -.045em;
-      line-height: 1.14;
+      line-height: 1.15;
     }
-    .rule {
-      width: 46px;
-      height: 2px;
-      margin: 25px auto 22px;
-      border-radius: 2px;
-      background: #91b2e1;
+    .description { margin: 15px 0 0; color: var(--muted); font-size: .98rem; line-height: 1.55; }
+    .controls {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+      gap: 24px;
+      padding: 22px;
+      margin-bottom: 18px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
     }
-    .description {
-      margin: 0 0 30px;
-      color: #c4d0e1;
-      font-size: .98rem;
-      line-height: 1.65;
+    fieldset { min-width: 0; margin: 0; padding: 0; border: 0; }
+    legend {
+      margin-bottom: 12px;
+      padding: 0;
+      color: var(--muted);
+      font-size: .78rem;
+      font-weight: 650;
+      letter-spacing: .04em;
     }
-    .links {
+    .options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .choice {
+      min-height: 42px;
+      padding: 10px 14px;
+      color: #d7e2f2;
+      background: rgba(255, 255, 255, .045);
+      border: 1px solid rgba(213, 225, 243, .2);
+      border-radius: 8px;
+      font: inherit;
+      font-size: .9rem;
+      cursor: pointer;
+      transition: background-color .15s, border-color .15s;
+    }
+    .choice:hover { background: rgba(255, 255, 255, .11); border-color: rgba(213, 225, 243, .4); }
+    .choice[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #142a47; font-weight: 650; }
+    .viewer {
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+    .viewer-head {
       display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-    .links a {
-      display: inline-flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      gap: 10px;
-      min-width: 192px;
-      min-height: 49px;
-      padding: 12px 20px;
-      border: 1px solid rgba(255, 255, 255, .26);
-      border-radius: 9px;
-      background: rgba(255, 255, 255, .08);
-      color: #fff;
-      font-size: .96rem;
+      gap: 16px;
+      padding: 17px 20px;
+    }
+    .viewer-label { margin: 0 0 5px; color: var(--muted); font-size: .74rem; }
+    h2 { margin: 0; font-size: 1.06rem; font-weight: 600; letter-spacing: -.015em; }
+    .actions { display: flex; flex-wrap: wrap; gap: 8px; }
+    .actions a {
+      display: inline-flex;
+      min-height: 39px;
+      padding: 9px 13px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-size: .87rem;
       font-weight: 600;
       text-decoration: none;
-      transition: background-color .15s, border-color .15s, transform .15s;
+      white-space: nowrap;
     }
-    .links a:first-child {
-      background: #edf3fc;
-      border-color: #edf3fc;
-      color: #122742;
-    }
-    .links a:hover {
-      background: rgba(255, 255, 255, .19);
-      border-color: rgba(255, 255, 255, .60);
-      transform: translateY(-2px);
-    }
-    .links a:first-child:hover {
-      background: #ffffff;
-      border-color: #ffffff;
-    }
-    a:focus-visible {
-      outline: 3px solid #a8c7ff;
-      outline-offset: 4px;
-    }
-    .arrow { font-size: 1.05rem; font-weight: 500; }
-    .contact {
+    .actions a:hover { border-color: rgba(255,255,255,.55); background: rgba(255,255,255,.08); }
+    .actions .download { color: #122742; background: var(--accent); border-color: var(--accent); }
+    .actions .download:hover { background: #fff; }
+    iframe { display: block; width: 100%; height: min(76vh, 980px); min-height: 520px; border: 0; background: #fff; }
+    a:focus-visible, button:focus-visible { outline: 3px solid #a8c7ff; outline-offset: 3px; }
+    footer {
       display: flex;
-      justify-content: center;
       align-items: center;
-      gap: 20px;
+      justify-content: center;
+      gap: 24px;
       flex-wrap: wrap;
-      margin-top: 32px;
-      padding-top: 23px;
-      border-top: 1px solid rgba(213, 225, 243, .16);
+      margin-top: 26px;
+      padding-top: 21px;
+      border-top: 1px solid var(--border);
     }
-    .contact a {
-      color: #aebfd8;
-      font-size: .87rem;
-      font-weight: 500;
-      text-decoration: none;
-      transition: color .15s;
-    }
-    .contact a:hover {
-      color: #fff;
-      text-decoration: underline;
-      text-underline-offset: 4px;
+    footer a { color: var(--muted); font-size: .88rem; text-decoration: none; }
+    footer a:hover { color: #fff; text-decoration: underline; text-underline-offset: 4px; }
+    noscript a { color: #dce9fc; }
+    @media (max-width: 760px) {
+      .controls { grid-template-columns: 1fr; gap: 18px; }
+      .viewer-head { align-items: flex-start; flex-direction: column; }
+      iframe { height: 66vh; min-height: 440px; }
     }
     @media (max-width: 480px) {
-      .links { flex-direction: column; }
-      .links a { width: 100%; }
+      .options .choice { flex: 1 1 auto; }
+      .actions { width: 100%; }
+      .actions a { flex: 1 1 0; }
+      .viewer-head { padding: 16px; }
     }
-    @media (prefers-reduced-motion: reduce) {
-      .links a, .contact a { transition: none; }
-      .links a:hover { transform: none; }
-    }
+    @media (prefers-reduced-motion: reduce) { .choice { transition: none; } }
   </style>
 </head>
 <body>
-  <main>
-    <p class="eyebrow">Résumé / CV</p>
-    <h1>Félix Wilhelmy</h1>
-    <div class="rule" aria-hidden="true"></div>
-    <p class="description">Choose a language to view my résumé.</p>
-    <nav class="links" aria-label="Résumé language">
-      <a href="fwil_resume_ml_eng.pdf" target="_blank" rel="noopener noreferrer" lang="en">
-        English résumé <span class="arrow" aria-hidden="true">↗</span>
-      </a>
-      <a href="fwil_resume_ml_fr.pdf" target="_blank" rel="noopener noreferrer" lang="fr">
-        CV en français <span class="arrow" aria-hidden="true">↗</span>
-      </a>
-    </nav>
-    <nav class="contact" aria-label="Contact and profiles">
+  <div class="page">
+    <header>
+      <p class="eyebrow">Résumé / CV</p>
+      <h1>Félix Wilhelmy</h1>
+      <p class="description">Choose a focus and language to preview or download my résumé.</p>
+    </header>
+
+    <main>
+      <section class="controls" aria-label="Résumé selection">
+        <fieldset>
+          <legend>Focus</legend>
+          <div class="options">
+            <button class="choice" type="button" data-track="ml" aria-pressed="true">Machine Learning</button>
+            <button class="choice" type="button" data-track="quantum" aria-pressed="false">Quantum Computing</button>
+            <button class="choice" type="button" data-track="software" aria-pressed="false">Software Engineering</button>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Language / Langue</legend>
+          <div class="options">
+            <button class="choice" type="button" data-language="en" aria-pressed="true" lang="en">English</button>
+            <button class="choice" type="button" data-language="fr" aria-pressed="false" lang="fr">Français</button>
+          </div>
+        </fieldset>
+      </section>
+
+      <section class="viewer" aria-label="Résumé PDF preview">
+        <div class="viewer-head">
+          <div>
+            <p class="viewer-label">Selected résumé</p>
+            <h2 id="selected-title" aria-live="polite">Machine Learning · English</h2>
+          </div>
+          <div class="actions">
+            <a id="open-pdf" href="resume_ml_en.pdf" target="_blank" rel="noopener noreferrer">Open PDF ↗</a>
+            <a id="download-pdf" class="download" href="resume_ml_en.pdf" download>Download PDF ↓</a>
+          </div>
+        </div>
+        <iframe id="pdf-preview" src="resume_ml_en.pdf" title="Machine Learning résumé in English"></iframe>
+      </section>
+
+      <noscript>
+        <p>JavaScript is required for the inline selector. You can open any version directly:</p>
+        <p>
+          <a href="resume_ml_en.pdf">Machine Learning (EN)</a> ·
+          <a href="resume_ml_fr.pdf">Machine Learning (FR)</a> ·
+          <a href="resume_quantum_en.pdf">Quantum Computing (EN)</a> ·
+          <a href="resume_quantum_fr.pdf">Quantum Computing (FR)</a> ·
+          <a href="resume_software_en.pdf">Software Engineering (EN)</a> ·
+          <a href="resume_software_fr.pdf">Software Engineering (FR)</a>
+        </p>
+      </noscript>
+    </main>
+
+    <footer aria-label="Contact and profiles">
       <a href="https://www.linkedin.com/in/felix-wilhelmy/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <a href="https://github.com/fwilhelmy" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="mailto:fwilhelmy@hotmail.com" aria-label="Email fwilhelmy@hotmail.com">Email</a>
-    </nav>
-  </main>
+      <a href="mailto:fwilhelmy@hotmail.com">Email</a>
+    </footer>
+  </div>
+
+  <script>
+    const pdfs = {
+      ml: { en: "resume_ml_en.pdf", fr: "resume_ml_fr.pdf" },
+      quantum: { en: "resume_quantum_en.pdf", fr: "resume_quantum_fr.pdf" },
+      software: { en: "resume_software_en.pdf", fr: "resume_software_fr.pdf" }
+    };
+    const trackLabels = {
+      ml: "Machine Learning",
+      quantum: "Quantum Computing",
+      software: "Software Engineering"
+    };
+    const languageLabels = { en: "English", fr: "Français" };
+    let selectedTrack = "ml";
+    let selectedLanguage = "en";
+
+    const preview = document.getElementById("pdf-preview");
+    const selectedTitle = document.getElementById("selected-title");
+    const openPdf = document.getElementById("open-pdf");
+    const downloadPdf = document.getElementById("download-pdf");
+
+    function updateResume() {
+      const file = pdfs[selectedTrack][selectedLanguage];
+      const title = trackLabels[selectedTrack] + " · " + languageLabels[selectedLanguage];
+      document.querySelectorAll("[data-track]").forEach(button => {
+        button.setAttribute("aria-pressed", String(button.dataset.track === selectedTrack));
+      });
+      document.querySelectorAll("[data-language]").forEach(button => {
+        button.setAttribute("aria-pressed", String(button.dataset.language === selectedLanguage));
+      });
+      selectedTitle.textContent = title;
+      preview.title = trackLabels[selectedTrack] + " résumé in " + languageLabels[selectedLanguage];
+      preview.src = file;
+      openPdf.href = file;
+      downloadPdf.href = file;
+    }
+
+    document.querySelectorAll("[data-track]").forEach(button => {
+      button.addEventListener("click", () => {
+        if (selectedTrack !== button.dataset.track) {
+          selectedTrack = button.dataset.track;
+          updateResume();
+        }
+      });
+    });
+    document.querySelectorAll("[data-language]").forEach(button => {
+      button.addEventListener("click", () => {
+        if (selectedLanguage !== button.dataset.language) {
+          selectedLanguage = button.dataset.language;
+          updateResume();
+        }
+      });
+    });
+  </script>
 </body>
 </html>
