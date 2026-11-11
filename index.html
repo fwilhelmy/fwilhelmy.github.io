@@ -187,6 +187,20 @@
     .project-links a, .all-projects a { color: #e2edff; font-size: .87rem; font-weight: 650; text-decoration: none; }
     .project-links a:hover, .all-projects a:hover { color: #fff; text-decoration: underline; text-underline-offset: 4px; }
     .all-projects { margin: 22px 0 0; text-align: center; }
+
+    /* GitHub mark for repository links, including the profile link in the footer.
+       A CSS mask keeps the SVG decorative and does not interfere with language updates. */
+    a[href^="https://github.com/"] { display: inline-flex; align-items: center; gap: 7px; }
+    a[href^="https://github.com/"]::before {
+      content: "";
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      flex: 0 0 16px;
+      background: currentColor;
+      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.25.79-.56v-2.2c-3.22.7-3.9-1.37-3.9-1.37-.53-1.34-1.3-1.69-1.3-1.69-1.05-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.04 1.78 2.73 1.27 3.4.97.1-.75.41-1.27.74-1.56-2.57-.29-5.28-1.29-5.28-5.74 0-1.27.46-2.31 1.2-3.13-.12-.3-.52-1.48.11-3.08 0 0 .98-.31 3.17 1.2a11 11 0 0 1 5.77 0c2.19-1.51 3.17-1.2 3.17-1.2.63 1.6.23 2.78.11 3.08.75.82 1.2 1.86 1.2 3.13 0 4.46-2.72 5.44-5.3 5.73.42.36.79 1.08.79 2.18v3.24c0 .31.21.68.8.56A11.5 11.5 0 0 0 12 .5Z'/%3E%3C/svg%3E") center / contain no-repeat;
+      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.25.79-.56v-2.2c-3.22.7-3.9-1.37-3.9-1.37-.53-1.34-1.3-1.69-1.3-1.69-1.05-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.04 1.78 2.73 1.27 3.4.97.1-.75.41-1.27.74-1.56-2.57-.29-5.28-1.29-5.28-5.74 0-1.27.46-2.31 1.2-3.13-.12-.3-.52-1.48.11-3.08 0 0 .98-.31 3.17 1.2a11 11 0 0 1 5.77 0c2.19-1.51 3.17-1.2 3.17-1.2.63 1.6.23 2.78.11 3.08.75.82 1.2 1.86 1.2 3.13 0 4.46-2.72 5.44-5.3 5.73.42.36.79 1.08.79 2.18v3.24c0 .31.21.68.8.56A11.5 11.5 0 0 0 12 .5Z'/%3E%3C/svg%3E") center / contain no-repeat;
+    }
     @media (max-width: 680px) {
       .featured-grid, .project-grid { grid-template-columns: 1fr; }
       .project-card.featured-lead { grid-column: auto; }
@@ -258,7 +272,7 @@
             <div class="project-links"><a href="https://github.com/fwilhelmy/QB-PIER" target="_blank" rel="noopener noreferrer" data-i18n="viewRepo">View repository ↗</a></div>
           </article>
           <article class="project-card">
-            <div class="card-top"><span class="project-type" data-i18n="frType">ÉTS · Graduate research</span></div>
+            <div class="card-top"><span class="project-type" data-i18n="frType">ÉTS · Graduate course project</span></div>
             <h3 data-i18n="frTitle">FR2SQL</h3>
             <p data-i18n="frDesc">A French Text-to-SQL prototype connecting natural-language questions to database schemas using semantic search and LLM prompting, with Python/SQLite tooling and Spider-FR evaluation.</p>
             <div class="project-stack">
@@ -335,7 +349,7 @@
             <h3 data-i18n="yaleTitle">Wildfire resource allocation</h3>
             <p data-i18n="yaleDesc">Built a geospatial optimization pipeline combining wildfire-risk data with constrained allocation of limited firefighting resources.</p>
             <div class="project-stack">
-              <div class="stack-row"><span class="stack-label" data-i18n="technologies">Technologies</span><span>Python · Qiskit · GeoTIFF</span></div>
+              <div class="stack-row"><span class="stack-label" data-i18n="technologies">Technologies</span><span>Python · Qiskit · NumPy</span></div>
               <div class="stack-row"><span class="stack-label" data-i18n="concepts">Concepts</span><span>Geospatial Data · QUBO · QAOA</span></div>
             </div>
             <div class="project-links"><a href="https://github.com/fwilhelmy/yquantum2025-taoquantum" target="_blank" rel="noopener noreferrer" data-i18n="viewRepo">View repository ↗</a></div>
@@ -438,7 +452,7 @@
         "qbType": "ÉTS · Master's research (2024–2026)",
         "qbTitle": "QB-PIER",
         "qbDesc": "I built an end-to-end benchmarking platform from scratch to investigate how classical, quantum, and hybrid image classifiers learn differently under adversarial attacks. It integrates model training, robustness testing, and reproducible comparative analysis.",
-        "frType": "ÉTS · Graduate research",
+        "frType": "ÉTS · Graduate course project",
         "frTitle": "FR2SQL",
         "frDesc": "A French Text-to-SQL prototype connecting natural-language questions to database schemas using semantic search and LLM prompting, with Python/SQLite tooling and Spider-FR evaluation.",
         "mcType": "McGill University · Douglas Research Centre (2024)",
@@ -499,7 +513,7 @@
         "qbType": "ÉTS · Recherche de maîtrise (2024–2026)",
         "qbTitle": "QB-PIER",
         "qbDesc": "J'ai conçu de A à Z une plateforme d'évaluation pour étudier comment des classificateurs d'images classiques, quantiques et hybrides apprennent différemment face aux attaques adversariales. Elle regroupe entraînement, tests de robustesse et analyses comparatives reproductibles.",
-        "frType": "ÉTS · Recherche de maîtrise",
+        "frType": "ÉTS · Projet de maîtrise",
         "frTitle": "FR2SQL",
         "frDesc": "Prototype Text-to-SQL en français reliant des questions en langage naturel aux schémas de bases de données grâce à la recherche sémantique et aux prompts de LLM, avec des outils Python/SQLite et une évaluation sur Spider-FR.",
         "mcType": "Université McGill · Centre de recherche Douglas (2024)",
