@@ -192,6 +192,10 @@
       .project-card.featured-lead { grid-column: auto; }
       .portfolio-section { margin-top: 42px; }
     }
+
+    .project-stack { display: grid; gap: 8px; margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(213, 225, 243, .13); }
+    .stack-row { display: flex; align-items: baseline; flex-wrap: wrap; gap: 5px 10px; color: #d4dfef; font-size: .8rem; line-height: 1.5; }
+    .stack-label { min-width: 88px; color: #a8bedc; font-size: .74rem; font-weight: 700; }
   </style>
 </head>
 <body>
@@ -236,87 +240,145 @@
       </section>
 
 
-      <section class="portfolio-section" id="projects" aria-labelledby="featured-title">
+      <section class="portfolio-section" id="research-projects" aria-labelledby="research-projects-title">
         <div class="section-heading">
-          <p class="section-kicker" data-i18n="workKicker">Portfolio</p>
-          <h2 id="featured-title" data-i18n="workTitle">Selected projects</h2>
-          <p data-i18n="workIntro">Research tools, applied AI prototypes, and experiments where I put algorithms into practice.</p>
+          <p class="section-kicker" data-i18n="researchKicker">Research</p>
+          <h2 id="research-projects-title" data-i18n="researchTitle">Research projects</h2>
+          <p data-i18n="researchIntro">Applied research and software development across machine learning, data systems, and neuroscience.</p>
         </div>
         <div class="featured-grid">
           <article class="project-card featured-lead">
-            <div class="card-top">
-              <span class="project-type" data-i18n="qbType">Master's research · ML engineering</span>
-              <span class="tech">PyTorch · PennyLane · Hydra</span>
+            <div class="card-top"><span class="project-type" data-i18n="qbType">ÉTS · Master's research (2024–2026)</span></div>
+            <h3 data-i18n="qbTitle">QB-PIER</h3>
+            <p data-i18n="qbDesc">I built an end-to-end benchmarking platform from scratch to investigate how classical, quantum, and hybrid image classifiers learn differently under adversarial attacks. It integrates model training, robustness testing, and reproducible comparative analysis.</p>
+            <div class="project-stack">
+              <div class="stack-row"><span class="stack-label" data-i18n="technologies">Technologies</span><span>Python · PyTorch · PennyLane · Hydra</span></div>
+              <div class="stack-row"><span class="stack-label" data-i18n="concepts">Concepts</span><span>Adversarial Robustness · Quantum ML · Benchmarking</span></div>
             </div>
-            <h3>QB-PIER</h3>
-            <p data-i18n="qbDesc">An experimentation and benchmarking platform I built from scratch to compare how classical, quantum, and hybrid image classifiers learn and respond to adversarial attacks. It brings model training, evaluation, and reproducible analysis into one configurable workflow.</p>
-            <div class="project-links">
-              <a href="https://github.com/fwilhelmy/QB-PIER" target="_blank" rel="noopener noreferrer" data-i18n="viewRepo">View repository ↗</a>
-            </div>
+            <div class="project-links"><a href="https://github.com/fwilhelmy/QB-PIER" target="_blank" rel="noopener noreferrer" data-i18n="viewRepo">View repository ↗</a></div>
           </article>
           <article class="project-card">
-            <div class="card-top"><span class="project-type" data-i18n="frType">Natural language · Data systems</span><span class="tech">Python · SQLite · LLMs</span></div>
-            <h3>FR2SQL</h3>
-            <p data-i18n="frDesc">A French-language Text-to-SQL prototype that connects questions to database schemas using semantic matching and language-model prompting. Includes schema inspection and evaluation tooling for Spider-FR.</p>
-            <div class="project-links">
-              <a href="https://github.com/fwilhelmy/FR2SQL" target="_blank" rel="noopener noreferrer" data-i18n="viewRepo">View repository ↗</a>
-              <a href="https://github.com/fwilhelmy/FR2SQL/tree/main/reports" target="_blank" rel="noopener noreferrer" data-i18n="reports">Reports ↗</a>
+            <div class="card-top"><span class="project-type" data-i18n="frType">ÉTS · Graduate research</span></div>
+            <h3 data-i18n="frTitle">FR2SQL</h3>
+            <p data-i18n="frDesc">A French Text-to-SQL prototype connecting natural-language questions to database schemas using semantic search and LLM prompting, with Python/SQLite tooling and Spider-FR evaluation.</p>
+            <div class="project-stack">
+              <div class="stack-row"><span class="stack-label" data-i18n="technologies">Technologies</span><span>Python · SQLite · Hugging Face · Sentence Transformers</span></div>
+              <div class="stack-row"><span class="stack-label" data-i18n="concepts">Concepts</span><span>NLP · Text-to-SQL · Semantic Search</span></div>
             </div>
+            <div class="project-links"><a href="https://github.com/fwilhelmy/FR2SQL" target="_blank" rel="noopener noreferrer" data-i18n="viewRepo">View repository ↗</a>
+              <a href="https://github.com/fwilhelmy/FR2SQL/tree/main/reports" target="_blank" rel="noopener noreferrer" data-i18n="viewReports">Reports ↗</a></div>
           </article>
           <article class="project-card">
-            <div class="card-top"><span class="project-type" data-i18n="dlType">Deep learning · Architecture studies</span><span class="tech">PyTorch · Experiments</span></div>
-            <h3 data-i18n="dlTitle">Deep learning experiments</h3>
-            <p data-i18n="dlDesc">Hands-on implementations and research reports exploring image classification (ResNet, MLP-Mixer), language models (GPT, LSTM), and generative models (VAE, diffusion). Each repository includes code and reports.</p>
-            <div class="project-links">
-              <a href="https://github.com/fwilhelmy/img-classification-experiments" target="_blank" rel="noopener noreferrer" data-i18n="cvLink">Computer vision ↗</a>
-              <a href="https://github.com/fwilhelmy/llm-experiments" target="_blank" rel="noopener noreferrer" data-i18n="llmLink">Language models ↗</a>
-              <a href="https://github.com/fwilhelmy/genai-experiments" target="_blank" rel="noopener noreferrer" data-i18n="genLink">Generative AI ↗</a>
+            <div class="card-top"><span class="project-type" data-i18n="mcType">McGill University · Douglas Research Centre (2024)</span></div>
+            <h3 data-i18n="mcTitle">AI visual stimuli for neuroscience</h3>
+            <p data-i18n="mcDesc">Developed a Python and DALL·E workflow for standardized image generation from French vocabulary, supporting cognitive language-comprehension research. Tested an end-to-end pilot with 20 words and gathered researcher feedback.</p>
+            <div class="project-stack">
+              <div class="stack-row"><span class="stack-label" data-i18n="technologies">Technologies</span><span>Python · OpenAI API · DALL·E 3</span></div>
+              <div class="stack-row"><span class="stack-label" data-i18n="concepts">Concepts</span><span>Generative AI · Prompt Engineering · Cognitive Research</span></div>
             </div>
           </article>
         </div>
       </section>
 
-      <section class="portfolio-section" aria-labelledby="more-title">
+      <section class="portfolio-section" id="deep-learning" aria-labelledby="deep-learning-title">
         <div class="section-heading">
-          <p class="section-kicker" data-i18n="moreKicker">Collaboration &amp; exploration</p>
-          <h2 id="more-title" data-i18n="moreTitle">Hackathons and research projects</h2>
-          <p data-i18n="moreIntro">Team projects from technical competitions alongside independent research follow-ups.</p>
+          <p class="section-kicker" data-i18n="deepKicker">Experiments</p>
+          <h2 id="deep-learning-title" data-i18n="deepTitle">Deep learning architecture implementations</h2>
+          <p data-i18n="deepIntro">Architecture implementations, experiments, and research reports in computer vision, language modeling, and generative AI.</p>
         </div>
         <div class="project-grid">
           <article class="project-card">
-            <div class="card-top"><span class="project-type" data-i18n="yaleType">Yale YQuantum 2025 · 2nd place</span><span class="tech">Geospatial · QUBO</span></div>
+            <div class="card-top"><span class="project-type" data-i18n="cvType">Computer vision</span></div>
+            <h3 data-i18n="cvTitle">Image classification architectures</h3>
+            <p data-i18n="cvDesc">Implemented and compared MLP, ResNet, and MLP-Mixer architectures on CIFAR-10 to study accuracy, training dynamics, and architecture trade-offs, documenting the experiments in technical reports.</p>
+            <div class="project-stack">
+              <div class="stack-row"><span class="stack-label" data-i18n="technologies">Technologies</span><span>Python · PyTorch · Jupyter</span></div>
+              <div class="stack-row"><span class="stack-label" data-i18n="concepts">Concepts</span><span>MLP · ResNet · MLP-Mixer · CIFAR-10</span></div>
+            </div>
+            <div class="project-links"><a href="https://github.com/fwilhelmy/img-classification-experiments" target="_blank" rel="noopener noreferrer" data-i18n="viewRepo">View repository ↗</a>
+              <a href="https://github.com/fwilhelmy/img-classification-experiments/tree/main/report" target="_blank" rel="noopener noreferrer" data-i18n="viewReports">Reports ↗</a></div>
+          </article>
+          <article class="project-card">
+            <div class="card-top"><span class="project-type" data-i18n="llmType">Language modeling</span></div>
+            <h3 data-i18n="llmTitle">Language model architectures</h3>
+            <p data-i18n="llmDesc">Implemented LSTM and GPT sequence models and experimented with how arithmetic learning changes under different training curricula. Includes implementation code and research reports.</p>
+            <div class="project-stack">
+              <div class="stack-row"><span class="stack-label" data-i18n="technologies">Technologies</span><span>Python · PyTorch · Jupyter</span></div>
+              <div class="stack-row"><span class="stack-label" data-i18n="concepts">Concepts</span><span>GPT · LSTM · Transformers · Curriculum Learning</span></div>
+            </div>
+            <div class="project-links"><a href="https://github.com/fwilhelmy/llm-experiments" target="_blank" rel="noopener noreferrer" data-i18n="viewRepo">View repository ↗</a>
+              <a href="https://github.com/fwilhelmy/llm-experiments/tree/main/reports" target="_blank" rel="noopener noreferrer" data-i18n="viewReports">Reports ↗</a></div>
+          </article>
+          <article class="project-card">
+            <div class="card-top"><span class="project-type" data-i18n="genType">Generative AI</span></div>
+            <h3 data-i18n="genTitle">Generative model architectures</h3>
+            <p data-i18n="genDesc">Implemented and experimented with variational autoencoders, diffusion models, and classifier-free guidance, with training code, notebooks, and research reports.</p>
+            <div class="project-stack">
+              <div class="stack-row"><span class="stack-label" data-i18n="technologies">Technologies</span><span>Python · PyTorch · Jupyter</span></div>
+              <div class="stack-row"><span class="stack-label" data-i18n="concepts">Concepts</span><span>VAE · Diffusion · DDPM · Classifier-Free Guidance</span></div>
+            </div>
+            <div class="project-links"><a href="https://github.com/fwilhelmy/genai-experiments" target="_blank" rel="noopener noreferrer" data-i18n="viewRepo">View repository ↗</a>
+              <a href="https://github.com/fwilhelmy/genai-experiments/tree/main/report" target="_blank" rel="noopener noreferrer" data-i18n="viewReports">Reports ↗</a></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="portfolio-section" id="hackathons" aria-labelledby="hackathons-title">
+        <div class="section-heading">
+          <p class="section-kicker" data-i18n="hackKicker">Competitions</p>
+          <h2 id="hackathons-title" data-i18n="hackTitle">Hackathons</h2>
+          <p data-i18n="hackIntro">Technical team projects built during university and research-institute hackathons.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="card-top"><span class="project-type" data-i18n="yaleType">Yale University · YQuantum 2025 · 2nd place</span></div>
             <h3 data-i18n="yaleTitle">Wildfire resource allocation</h3>
-            <p data-i18n="yaleDesc">Co-developed a pipeline combining wildfire-risk map processing with constrained optimization to allocate limited response resources across high-risk areas.</p>
+            <p data-i18n="yaleDesc">Built a geospatial optimization pipeline combining wildfire-risk data with constrained allocation of limited firefighting resources.</p>
+            <div class="project-stack">
+              <div class="stack-row"><span class="stack-label" data-i18n="technologies">Technologies</span><span>Python · Qiskit · GeoTIFF</span></div>
+              <div class="stack-row"><span class="stack-label" data-i18n="concepts">Concepts</span><span>Geospatial Data · QUBO · QAOA</span></div>
+            </div>
             <div class="project-links"><a href="https://github.com/fwilhelmy/yquantum2025-taoquantum" target="_blank" rel="noopener noreferrer" data-i18n="viewRepo">View repository ↗</a></div>
           </article>
           <article class="project-card">
-            <div class="card-top"><span class="project-type">MIT iQuHack 2026 · IonQ</span><span class="tech">Python · Optimization</span></div>
+            <div class="card-top"><span class="project-type" data-i18n="mit26Type">MIT · iQuHack 2026 · IonQ</span></div>
             <h3 data-i18n="mit26Title">Adaptive quantum-network strategy</h3>
-            <p data-i18n="mit26Desc">Co-developed modular entanglement-distillation circuits and a feedback-driven graph strategy for a stochastic competition with limited resources.</p>
+            <p data-i18n="mit26Desc">Developed modular entanglement-distillation circuits and a feedback-driven graph strategy for a stochastic optimization challenge with limited resources.</p>
+            <div class="project-stack">
+              <div class="stack-row"><span class="stack-label" data-i18n="technologies">Technologies</span><span>Python · Qiskit · NetworkX</span></div>
+              <div class="stack-row"><span class="stack-label" data-i18n="concepts">Concepts</span><span>Entanglement Distillation · Graph Optimization</span></div>
+            </div>
             <div class="project-links"><a href="https://github.com/fwilhelmy/mit-iquhack-2026" target="_blank" rel="noopener noreferrer" data-i18n="viewRepo">View repository ↗</a></div>
           </article>
           <article class="project-card">
-            <div class="card-top"><span class="project-type" data-i18n="partyType">iQuCodeFest 2025 · 1st place</span><span class="tech">Python · Qiskit</span></div>
-            <h3>Super Quantum Party</h3>
-            <p data-i18n="partyDesc">A playable quantum-inspired board game built with a team: quantum random walks for movement and gate-based mini-games that reshape the board.</p>
+            <div class="card-top"><span class="project-type" data-i18n="partyType">Polytechnique Montréal · iQuCodeFest 2025 · 1st place</span></div>
+            <h3 data-i18n="partyTitle">Super Quantum Party</h3>
+            <p data-i18n="partyDesc">Built a playable quantum-inspired board game featuring quantum random walks, quantum-gate mini-games, and strategic interactions.</p>
+            <div class="project-stack">
+              <div class="stack-row"><span class="stack-label" data-i18n="technologies">Technologies</span><span>Python · Qiskit · SciPy</span></div>
+              <div class="stack-row"><span class="stack-label" data-i18n="concepts">Concepts</span><span>Quantum Random Walks · Game Design</span></div>
+            </div>
             <div class="project-links"><a href="https://github.com/fwilhelmy/iqucodefest-2025" target="_blank" rel="noopener noreferrer" data-i18n="viewRepo">View repository ↗</a></div>
           </article>
           <article class="project-card">
-            <div class="card-top"><span class="project-type" data-i18n="photonicType">Research continuation · Financial ML</span><span class="tech">PennyLane · Time series</span></div>
-            <h3 data-i18n="photonicTitle">Photonic QLSTM forecasting</h3>
-            <p data-i18n="photonicDesc">A follow-up to a hackathon prototype: a reproducible pointwise quantum LSTM experiment for forecasting swaption volatility, with chronological evaluation and training fixes.</p>
-            <div class="project-links"><a href="https://github.com/fwilhelmy/photonic-qlstm-swaption" target="_blank" rel="noopener noreferrer" data-i18n="viewRepo">View repository ↗</a></div>
+            <div class="card-top"><span class="project-type" data-i18n="milType">Mila / Université de Montréal · Mil’HaQ Fest 2025 · Best Effort Award</span></div>
+            <h3 data-i18n="milTitle">Photonic QLSTM forecasting</h3>
+            <p data-i18n="milDesc">Developed a photonic quantum LSTM approach for the Mil’HaQ Fest hackathon to forecast swaption volatility, alongside a classical LSTM comparison.</p>
+            <div class="project-stack">
+              <div class="stack-row"><span class="stack-label" data-i18n="technologies">Technologies</span><span>Python · PyTorch · PennyLane · MerLin</span></div>
+              <div class="stack-row"><span class="stack-label" data-i18n="concepts">Concepts</span><span>Photonic QLSTM · Time-Series Forecasting</span></div>
+            </div>
+            <div class="project-links"><a href="https://github.com/fwilhelmy/milhaq-fest-2025" target="_blank" rel="noopener noreferrer" data-i18n="viewHackRepo">Hackathon repository ↗</a>
+              <a href="https://github.com/fwilhelmy/photonic-qlstm-swaption" target="_blank" rel="noopener noreferrer" data-i18n="viewQlstmRepo">QLSTM implementation ↗</a></div>
           </article>
           <article class="project-card">
-            <div class="card-top"><span class="project-type" data-i18n="milType">Mil'HaQ Fest 2025 · Best Effort Award</span><span class="tech">Finance · Quantum ML</span></div>
-            <h3 data-i18n="milTitle">Swaption volatility prediction</h3>
-            <p data-i18n="milDesc">A team hackathon exploration of photonic and classical recurrent networks for forecasting financial volatility surfaces; the starting point for the later QLSTM research.</p>
-            <div class="project-links"><a href="https://github.com/fwilhelmy/milhaq-fest-2025" target="_blank" rel="noopener noreferrer" data-i18n="viewRepo">View repository ↗</a></div>
-          </article>
-          <article class="project-card">
-            <div class="card-top"><span class="project-type">MIT iQuHack 2025 · IonQ</span><span class="tech">Quantum algorithms</span></div>
+            <div class="card-top"><span class="project-type" data-i18n="mit25Type">MIT · iQuHack 2025 · IonQ</span></div>
             <h3 data-i18n="mit25Title">Constrained Max-Cut optimization</h3>
-            <p data-i18n="mit25Desc">A team solution exploring variational quantum imaginary-time evolution (varQITE) for a Max-Cut challenge with balance and connectivity constraints.</p>
+            <p data-i18n="mit25Desc">Explored variational quantum imaginary-time evolution (varQITE) for a Max-Cut problem with balance and connectivity constraints.</p>
+            <div class="project-stack">
+              <div class="stack-row"><span class="stack-label" data-i18n="technologies">Technologies</span><span>Python · Qiskit · NetworkX</span></div>
+              <div class="stack-row"><span class="stack-label" data-i18n="concepts">Concepts</span><span>varQITE · Max-Cut · Constrained Optimization</span></div>
+            </div>
             <div class="project-links"><a href="https://github.com/fwilhelmy/iquhack2025-ionq" target="_blank" rel="noopener noreferrer" data-i18n="viewRepo">View repository ↗</a></div>
           </article>
         </div>
@@ -354,94 +416,128 @@
     };
     const languageLabels = { en: "English", fr: "Français" };
     const translations = {
-      "en": {
-            "eyebrow": "Projects & résumé",
-            "intro": "Software engineer and recent research master's graduate at ÉTS, exploring machine learning, reliable software systems, and quantum computing.",
-            "focus": "Focus",
-            "selected": "Selected résumé",
-            "resumeNote": "Open the PDF in a new tab or download a copy.",
-            "openPdf": "Open PDF ↗",
-            "downloadPdf": "Download PDF ↓",
-            "workKicker": "Portfolio",
-            "workTitle": "Selected projects",
-            "workIntro": "Research tools, applied AI prototypes, and experiments where I put algorithms into practice.",
-            "qbType": "Master's research · ML engineering",
-            "qbDesc": "An experimentation and benchmarking platform I built from scratch to compare how classical, quantum, and hybrid image classifiers learn and respond to adversarial attacks. It brings model training, evaluation, and reproducible analysis into one configurable workflow.",
-            "viewRepo": "View repository ↗",
-            "thesis": "Master's thesis ↗",
-            "frType": "Natural language · Data systems",
-            "frDesc": "A French-language Text-to-SQL prototype that connects questions to database schemas using semantic matching and language-model prompting. Includes schema inspection and evaluation tooling for Spider-FR.",
-            "reports": "Reports ↗",
-            "dlType": "Deep learning · Architecture studies",
-            "dlTitle": "Deep learning experiments",
-            "dlDesc": "Hands-on implementations and research reports exploring image classification (ResNet, MLP-Mixer), language models (GPT, LSTM), and generative models (VAE, diffusion). Each repository includes code and reports.",
-            "cvLink": "Computer vision ↗",
-            "llmLink": "Language models ↗",
-            "genLink": "Generative AI ↗",
-            "moreKicker": "Collaboration & exploration",
-            "moreTitle": "Hackathons and research projects",
-            "moreIntro": "Team projects from technical competitions alongside independent research follow-ups.",
-            "yaleType": "Yale YQuantum 2025 · 2nd place",
-            "yaleTitle": "Wildfire resource allocation",
-            "yaleDesc": "Co-developed a pipeline combining wildfire-risk map processing with constrained optimization to allocate limited response resources across high-risk areas.",
-            "mit26Title": "Adaptive quantum-network strategy",
-            "mit26Desc": "Co-developed modular entanglement-distillation circuits and a feedback-driven graph strategy for a stochastic competition with limited resources.",
-            "partyType": "iQuCodeFest 2025 · 1st place",
-            "partyDesc": "A playable quantum-inspired board game built with a team: quantum random walks for movement and gate-based mini-games that reshape the board.",
-            "photonicType": "Research continuation · Financial ML",
-            "photonicTitle": "Photonic QLSTM forecasting",
-            "photonicDesc": "A follow-up to a hackathon prototype: a reproducible pointwise quantum LSTM experiment for forecasting swaption volatility, with chronological evaluation and training fixes.",
-            "milType": "Mil'HaQ Fest 2025 · Best Effort Award",
-            "milTitle": "Swaption volatility prediction",
-            "milDesc": "A team hackathon exploration of photonic and classical recurrent networks for forecasting financial volatility surfaces; the starting point for the later QLSTM research.",
-            "mit25Title": "Constrained Max-Cut optimization",
-            "mit25Desc": "A team solution exploring variational quantum imaginary-time evolution (varQITE) for a Max-Cut challenge with balance and connectivity constraints.",
-            "allProjects": "Explore more public repositories on GitHub ↗"
-      },
-      "fr": {
-            "eyebrow": "Projets et CV",
-            "intro": "Diplômé en génie logiciel et récemment d'une maîtrise recherche à l'ÉTS, je m'intéresse à l'apprentissage automatique, aux systèmes logiciels fiables et à l'informatique quantique.",
-            "focus": "Domaine",
-            "selected": "CV sélectionné",
-            "resumeNote": "Ouvrez le PDF dans un nouvel onglet ou téléchargez-en une copie.",
-            "openPdf": "Ouvrir le PDF ↗",
-            "downloadPdf": "Télécharger le PDF ↓",
-            "workKicker": "Portfolio",
-            "workTitle": "Projets sélectionnés",
-            "workIntro": "Outils de recherche, prototypes d'IA appliquée et expérimentations où je mets les algorithmes en pratique.",
-            "qbType": "Recherche de maîtrise · Ingénierie ML",
-            "qbDesc": "Plateforme d'expérimentation et d'évaluation que j'ai développée de A à Z pour comparer l'apprentissage et la robustesse adversariale de modèles d'images classiques, quantiques et hybrides. Elle réunit entraînement, évaluation et analyse reproductible dans un flux de travail configurable.",
-            "viewRepo": "Voir le dépôt ↗",
-            "thesis": "Mémoire de maîtrise ↗",
-            "frType": "Langage naturel · Systèmes de données",
-            "frDesc": "Prototype de génération de SQL à partir de questions en français, utilisant l'appariement sémantique et les prompts de modèles de langage pour relier les demandes aux schémas de bases de données. Comprend des outils d'inspection et d'évaluation sur Spider-FR.",
-            "reports": "Rapports ↗",
-            "dlType": "Apprentissage profond · Étude d'architectures",
-            "dlTitle": "Expérimentations en apprentissage profond",
-            "dlDesc": "Implémentations et rapports comparatifs sur la classification d'images (ResNet, MLP-Mixer), les modèles de langage (GPT, LSTM) et les modèles génératifs (VAE, diffusion). Chaque dépôt contient du code et des rapports.",
-            "cvLink": "Vision par ordinateur ↗",
-            "llmLink": "Modèles de langage ↗",
-            "genLink": "IA générative ↗",
-            "moreKicker": "Collaboration et exploration",
-            "moreTitle": "Hackathons et projets de recherche",
-            "moreIntro": "Projets d'équipe issus de compétitions techniques et prolongements de recherche indépendants.",
-            "yaleType": "Yale YQuantum 2025 · 2e place",
-            "yaleTitle": "Allocation de ressources contre les feux de forêt",
-            "yaleDesc": "Codéveloppement d'un pipeline combinant le traitement de cartes de risque d'incendie et l'optimisation sous contraintes pour répartir des ressources limitées dans les zones à risque.",
-            "mit26Title": "Stratégie adaptative pour un réseau quantique",
-            "mit26Desc": "Codéveloppement de circuits modulaires de distillation d'intrication et d'une stratégie sur graphe ajustée selon les résultats, pour une compétition stochastique aux ressources limitées.",
-            "partyType": "iQuCodeFest 2025 · 1re place",
-            "partyDesc": "Jeu de plateau quantique jouable réalisé en équipe : marches aléatoires quantiques pour les déplacements et mini-jeux à portes quantiques modifiant le plateau.",
-            "photonicType": "Poursuite de recherche · Finance et ML",
-            "photonicTitle": "Prévision avec un QLSTM photonique",
-            "photonicDesc": "Prolongement d'un prototype de hackathon : expérimentation reproductible d'un LSTM quantique local pour prévoir la volatilité des swaptions, avec évaluation chronologique et correctifs d'entraînement.",
-            "milType": "Mil'HaQ Fest 2025 · Prix Meilleur Effort",
-            "milTitle": "Prévision de la volatilité des swaptions",
-            "milDesc": "Exploration en équipe de réseaux récurrents photoniques et classiques pour prévoir des surfaces de volatilité financières, à l'origine des recherches QLSTM ultérieures.",
-            "mit25Title": "Optimisation Max-Cut sous contraintes",
-            "mit25Desc": "Projet d'équipe explorant l'évolution variationnelle en temps imaginaire quantique (varQITE) pour un défi Max-Cut avec contraintes d'équilibre et de connexité.",
-            "allProjects": "Explorer mes autres dépôts publics sur GitHub ↗"
-      }
+    "en": {
+        "mlTrack": "Machine Learning",
+        "quantumTrack": "Quantum Computing",
+        "softwareTrack": "Software Engineering",
+        "technologies": "Technologies",
+        "concepts": "Concepts",
+        "viewRepo": "View repository ↗",
+        "viewReports": "Reports ↗",
+        "viewHackRepo": "Hackathon repository ↗",
+        "viewQlstmRepo": "QLSTM implementation ↗",
+        "researchKicker": "Research",
+        "researchTitle": "Research projects",
+        "researchIntro": "Applied research and software development across machine learning, data systems, and neuroscience.",
+        "deepKicker": "Experiments",
+        "deepTitle": "Deep learning architecture implementations",
+        "deepIntro": "Architecture implementations, experiments, and research reports in computer vision, language modeling, and generative AI.",
+        "hackKicker": "Competitions",
+        "hackTitle": "Hackathons",
+        "hackIntro": "Technical team projects built during university and research-institute hackathons.",
+        "qbType": "ÉTS · Master's research (2024–2026)",
+        "qbTitle": "QB-PIER",
+        "qbDesc": "I built an end-to-end benchmarking platform from scratch to investigate how classical, quantum, and hybrid image classifiers learn differently under adversarial attacks. It integrates model training, robustness testing, and reproducible comparative analysis.",
+        "frType": "ÉTS · Graduate research",
+        "frTitle": "FR2SQL",
+        "frDesc": "A French Text-to-SQL prototype connecting natural-language questions to database schemas using semantic search and LLM prompting, with Python/SQLite tooling and Spider-FR evaluation.",
+        "mcType": "McGill University · Douglas Research Centre (2024)",
+        "mcTitle": "AI visual stimuli for neuroscience",
+        "mcDesc": "Developed a Python and DALL·E workflow for standardized image generation from French vocabulary, supporting cognitive language-comprehension research. Tested an end-to-end pilot with 20 words and gathered researcher feedback.",
+        "cvType": "Computer vision",
+        "cvTitle": "Image classification architectures",
+        "cvDesc": "Implemented and compared MLP, ResNet, and MLP-Mixer architectures on CIFAR-10 to study accuracy, training dynamics, and architecture trade-offs, documenting the experiments in technical reports.",
+        "llmType": "Language modeling",
+        "llmTitle": "Language model architectures",
+        "llmDesc": "Implemented LSTM and GPT sequence models and experimented with how arithmetic learning changes under different training curricula. Includes implementation code and research reports.",
+        "genType": "Generative AI",
+        "genTitle": "Generative model architectures",
+        "genDesc": "Implemented and experimented with variational autoencoders, diffusion models, and classifier-free guidance, with training code, notebooks, and research reports.",
+        "yaleType": "Yale University · YQuantum 2025 · 2nd place",
+        "yaleTitle": "Wildfire resource allocation",
+        "yaleDesc": "Built a geospatial optimization pipeline combining wildfire-risk data with constrained allocation of limited firefighting resources.",
+        "mit26Type": "MIT · iQuHack 2026 · IonQ",
+        "mit26Title": "Adaptive quantum-network strategy",
+        "mit26Desc": "Developed modular entanglement-distillation circuits and a feedback-driven graph strategy for a stochastic optimization challenge with limited resources.",
+        "partyType": "Polytechnique Montréal · iQuCodeFest 2025 · 1st place",
+        "partyTitle": "Super Quantum Party",
+        "partyDesc": "Built a playable quantum-inspired board game featuring quantum random walks, quantum-gate mini-games, and strategic interactions.",
+        "milType": "Mila / Université de Montréal · Mil’HaQ Fest 2025 · Best Effort Award",
+        "milTitle": "Photonic QLSTM forecasting",
+        "milDesc": "Developed a photonic quantum LSTM approach for the Mil’HaQ Fest hackathon to forecast swaption volatility, alongside a classical LSTM comparison.",
+        "mit25Type": "MIT · iQuHack 2025 · IonQ",
+        "mit25Title": "Constrained Max-Cut optimization",
+        "mit25Desc": "Explored variational quantum imaginary-time evolution (varQITE) for a Max-Cut problem with balance and connectivity constraints.",
+        "eyebrow": "Projects & résumé",
+        "intro": "Software engineer and recent research master's graduate at ÉTS, exploring machine learning, reliable software systems, and quantum computing.",
+        "focus": "Focus",
+        "selected": "Selected résumé",
+        "resumeNote": "Open the PDF in a new tab or download a copy.",
+        "openPdf": "Open PDF ↗",
+        "downloadPdf": "Download PDF ↓",
+        "allProjects": "Explore more public repositories on GitHub ↗"
+    },
+    "fr": {
+        "mlTrack": "Apprentissage automatique",
+        "quantumTrack": "Informatique quantique",
+        "softwareTrack": "Génie logiciel",
+        "technologies": "Technologies",
+        "concepts": "Concepts",
+        "viewRepo": "Voir le dépôt ↗",
+        "viewReports": "Rapports ↗",
+        "viewHackRepo": "Dépôt du hackathon ↗",
+        "viewQlstmRepo": "Implémentation QLSTM ↗",
+        "researchKicker": "Recherche",
+        "researchTitle": "Projets de recherche",
+        "researchIntro": "Recherche appliquée et développement logiciel en apprentissage automatique, en systèmes de données et en neurosciences.",
+        "deepKicker": "Expérimentations",
+        "deepTitle": "Implémentations d'architectures d'apprentissage profond",
+        "deepIntro": "Implémentations d'architectures, expériences et rapports de recherche en vision par ordinateur, modèles de langage et IA générative.",
+        "hackKicker": "Compétitions",
+        "hackTitle": "Hackathons",
+        "hackIntro": "Projets d'équipe réalisés lors de hackathons universitaires et d'instituts de recherche.",
+        "qbType": "ÉTS · Recherche de maîtrise (2024–2026)",
+        "qbTitle": "QB-PIER",
+        "qbDesc": "J'ai conçu de A à Z une plateforme d'évaluation pour étudier comment des classificateurs d'images classiques, quantiques et hybrides apprennent différemment face aux attaques adversariales. Elle regroupe entraînement, tests de robustesse et analyses comparatives reproductibles.",
+        "frType": "ÉTS · Recherche de maîtrise",
+        "frTitle": "FR2SQL",
+        "frDesc": "Prototype Text-to-SQL en français reliant des questions en langage naturel aux schémas de bases de données grâce à la recherche sémantique et aux prompts de LLM, avec des outils Python/SQLite et une évaluation sur Spider-FR.",
+        "mcType": "Université McGill · Centre de recherche Douglas (2024)",
+        "mcTitle": "Stimuli visuels par IA pour les neurosciences",
+        "mcDesc": "Développement d'un pipeline Python et DALL·E pour générer des images standardisées à partir de vocabulaire français pour la recherche en compréhension du langage. Essai complet sur 20 mots et prise en compte des commentaires de l'équipe de recherche.",
+        "cvType": "Vision par ordinateur",
+        "cvTitle": "Architectures de classification d'images",
+        "cvDesc": "Implémentation et comparaison des architectures MLP, ResNet et MLP-Mixer sur CIFAR-10 pour étudier la précision, la dynamique d'entraînement et les compromis architecturaux, avec rapports techniques.",
+        "llmType": "Modèles de langage",
+        "llmTitle": "Architectures de modèles de langage",
+        "llmDesc": "Implémentation de modèles séquentiels LSTM et GPT et expérimentation de leur apprentissage de l'arithmétique selon différents programmes d'entraînement. Inclut le code et des rapports de recherche.",
+        "genType": "IA générative",
+        "genTitle": "Architectures de modèles génératifs",
+        "genDesc": "Implémentation et expérimentation d'autoencodeurs variationnels, de modèles de diffusion et du guidage sans classificateur, avec code d'entraînement, notebooks et rapports.",
+        "yaleType": "Université Yale · YQuantum 2025 · 2e place",
+        "yaleTitle": "Allocation de ressources contre les feux de forêt",
+        "yaleDesc": "Développement d'un pipeline d'optimisation géospatiale combinant les données de risque d'incendie et la répartition sous contraintes de ressources limitées.",
+        "mit26Type": "MIT · iQuHack 2026 · IonQ",
+        "mit26Title": "Stratégie adaptative pour un réseau quantique",
+        "mit26Desc": "Développement de circuits modulaires de distillation d'intrication et d'une stratégie sur graphe ajustée selon les résultats d'un défi d'optimisation stochastique aux ressources limitées.",
+        "partyType": "Polytechnique Montréal · iQuCodeFest 2025 · 1re place",
+        "partyTitle": "Super Quantum Party",
+        "partyDesc": "Création d'un jeu de plateau quantique jouable, avec marches aléatoires quantiques, mini-jeux fondés sur des portes quantiques et interactions stratégiques.",
+        "milType": "Mila / Université de Montréal · Mil’HaQ Fest 2025 · Prix Meilleur Effort",
+        "milTitle": "Prévision avec un QLSTM photonique",
+        "milDesc": "Développement d'une approche LSTM quantique photonique pour le hackathon Mil’HaQ Fest afin de prévoir la volatilité des swaptions, avec comparaison à un LSTM classique.",
+        "mit25Type": "MIT · iQuHack 2025 · IonQ",
+        "mit25Title": "Optimisation Max-Cut sous contraintes",
+        "mit25Desc": "Exploration de l'évolution variationnelle en temps imaginaire quantique (varQITE) pour un problème Max-Cut avec contraintes d'équilibre et de connexité.",
+        "eyebrow": "Projets et CV",
+        "intro": "Diplômé en génie logiciel et récemment d'une maîtrise recherche à l'ÉTS, je m'intéresse à l'apprentissage automatique, aux systèmes logiciels fiables et à l'informatique quantique.",
+        "focus": "Domaine",
+        "selected": "CV sélectionné",
+        "resumeNote": "Ouvrez le PDF dans un nouvel onglet ou téléchargez-en une copie.",
+        "openPdf": "Ouvrir le PDF ↗",
+        "downloadPdf": "Télécharger le PDF ↓",
+        "allProjects": "Explorer mes autres dépôts publics sur GitHub ↗"
+    }
 };
     let selectedTrack = "ml";
     let selectedLanguage = "en";
