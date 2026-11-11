@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0a1931">
-  <meta name="description" content="Browse Félix Wilhelmy's software engineering, machine learning, and quantum computing résumés in English or French.">
+  <meta name="description" content="Explore Félix Wilhelmy's machine learning, software engineering, and quantum computing projects, and open or download his résumé in English or French.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Félix Wilhelmy | Résumé / CV">
-  <meta property="og:description" content="Browse six résumé versions in English and French.">
+  <meta property="og:title" content="Félix Wilhelmy | Projects & Résumé">
+  <meta property="og:description" content="Machine learning, software engineering, and quantum computing projects, with six English and French résumé versions.">
   <meta property="og:url" content="https://fwilhelmy.github.io/">
-  <title>Félix Wilhelmy | Résumé / CV</title>
+  <title>Félix Wilhelmy | Projects & Résumé</title>
   <style>
     :root {
       color-scheme: dark;
@@ -29,7 +29,7 @@
       color: var(--text);
     }
     .page {
-      width: min(100%, 1040px);
+      width: min(100%, 1120px);
       margin: 0 auto;
       padding: clamp(28px, 5vw, 56px) clamp(16px, 4vw, 32px) 32px;
     }
@@ -117,7 +117,6 @@
     .actions a:hover { border-color: rgba(255,255,255,.55); background: rgba(255,255,255,.08); }
     .actions .download { color: #122742; background: var(--accent); border-color: var(--accent); }
     .actions .download:hover { background: #fff; }
-    iframe { display: block; width: 100%; height: min(76vh, 980px); min-height: 520px; border: 0; background: #fff; }
     a:focus-visible, button:focus-visible { outline: 3px solid #a8c7ff; outline-offset: 3px; }
     footer {
       display: flex;
@@ -135,7 +134,6 @@
     @media (max-width: 760px) {
       .controls { grid-template-columns: 1fr; gap: 18px; }
       .viewer-head { align-items: flex-start; flex-direction: column; }
-      iframe { height: 66vh; min-height: 440px; }
     }
     @media (max-width: 480px) {
       .options .choice { flex: 1 1 auto; }
@@ -144,20 +142,70 @@
       .viewer-head { padding: 16px; }
     }
     @media (prefers-reduced-motion: reduce) { .choice { transition: none; } }
+
+    .viewer-note { margin: 8px 0 0; color: var(--muted); font-size: .87rem; line-height: 1.5; }
+    .portfolio-section { margin-top: 54px; }
+    .section-heading { margin-bottom: 20px; }
+    .section-kicker {
+      margin: 0 0 8px;
+      color: #9cb3d5;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .section-heading h2 { font-size: clamp(1.55rem, 3vw, 2rem); font-weight: 650; letter-spacing: -.035em; }
+    .section-heading > p:last-child { max-width: 730px; margin: 10px 0 0; color: var(--muted); line-height: 1.6; }
+    .featured-grid, .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      padding: clamp(20px, 3vw, 26px);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+    .project-card.featured-lead {
+      grid-column: 1 / -1;
+      background: linear-gradient(125deg, rgba(55, 93, 149, .24), rgba(255, 255, 255, .04) 78%);
+      border-color: rgba(175, 205, 248, .33);
+    }
+    .card-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; }
+    .project-type {
+      color: #c7dafa;
+      font-weight: 700;
+      font-size: .78rem;
+      letter-spacing: .005em;
+    }
+    .tech { color: var(--muted); font-size: .76rem; }
+    .project-card h3 { margin: 17px 0 10px; font-size: 1.2rem; line-height: 1.3; letter-spacing: -.018em; }
+    .project-card.featured-lead h3 { font-size: 1.52rem; }
+    .project-card > p { margin: 0; color: #ccd8e9; font-size: .91rem; line-height: 1.65; }
+    .project-card.featured-lead > p { max-width: 890px; }
+    .project-links { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-top: auto; padding-top: 22px; }
+    .project-links a, .all-projects a { color: #e2edff; font-size: .87rem; font-weight: 650; text-decoration: none; }
+    .project-links a:hover, .all-projects a:hover { color: #fff; text-decoration: underline; text-underline-offset: 4px; }
+    .all-projects { margin: 22px 0 0; text-align: center; }
+    @media (max-width: 680px) {
+      .featured-grid, .project-grid { grid-template-columns: 1fr; }
+      .project-card.featured-lead { grid-column: auto; }
+      .portfolio-section { margin-top: 42px; }
+    }
   </style>
 </head>
 <body>
   <div class="page">
     <header>
-      <p class="eyebrow">Résumé / CV</p>
+      <p class="eyebrow" data-i18n="eyebrow">Projects &amp; résumé</p>
       <h1>Félix Wilhelmy</h1>
-      <p class="description">Choose a focus and language to preview or download my résumé.</p>
+      <p class="description" data-i18n="intro">Software engineer and recent research master's graduate at ÉTS, exploring machine learning, reliable software systems, and quantum computing.</p>
     </header>
 
     <main>
       <section class="controls" aria-label="Résumé selection">
         <fieldset>
-          <legend>Focus</legend>
+          <legend data-i18n="focus">Focus</legend>
           <div class="options">
             <button class="choice" type="button" data-track="ml" aria-pressed="true">Machine Learning</button>
             <button class="choice" type="button" data-track="quantum" aria-pressed="false">Quantum Computing</button>
@@ -173,22 +221,110 @@
         </fieldset>
       </section>
 
-      <section class="viewer" aria-label="Résumé PDF preview">
+      <section class="viewer" aria-label="Résumé PDF links">
         <div class="viewer-head">
           <div>
-            <p class="viewer-label">Selected résumé</p>
+            <p class="viewer-label" data-i18n="selected">Selected résumé</p>
             <h2 id="selected-title" aria-live="polite">Machine Learning · English</h2>
+            <p class="viewer-note" data-i18n="resumeNote">Open the PDF in a new tab or download a copy. No embedded viewer.</p>
           </div>
           <div class="actions">
-            <a id="open-pdf" href="resume_ml_en.pdf" target="_blank" rel="noopener noreferrer">Open PDF ↗</a>
-            <a id="download-pdf" class="download" href="resume_ml_en.pdf" download>Download PDF ↓</a>
+            <a id="open-pdf" href="resume_ml_en.pdf" target="_blank" rel="noopener noreferrer" data-i18n="openPdf">Open PDF ↗</a>
+            <a id="download-pdf" class="download" href="resume_ml_en.pdf" download data-i18n="downloadPdf">Download PDF ↓</a>
           </div>
         </div>
-        <iframe id="pdf-preview" src="resume_ml_en.pdf" title="Machine Learning résumé in English"></iframe>
       </section>
 
+
+      <section class="portfolio-section" id="projects" aria-labelledby="featured-title">
+        <div class="section-heading">
+          <p class="section-kicker" data-i18n="workKicker">Portfolio</p>
+          <h2 id="featured-title" data-i18n="workTitle">Selected projects</h2>
+          <p data-i18n="workIntro">Research tools, applied AI prototypes, and experiments where I put algorithms into practice.</p>
+        </div>
+        <div class="featured-grid">
+          <article class="project-card featured-lead">
+            <div class="card-top">
+              <span class="project-type" data-i18n="qbType">Master's research · ML engineering</span>
+              <span class="tech">PyTorch · PennyLane · Hydra</span>
+            </div>
+            <h3>QB-PIER</h3>
+            <p data-i18n="qbDesc">An experimentation and benchmarking platform I built from scratch to compare how classical, quantum, and hybrid image classifiers learn and respond to adversarial attacks. It brings model training, evaluation, and reproducible analysis into one configurable workflow.</p>
+            <div class="project-links">
+              <a href="https://github.com/fwilhelmy/QB-PIER" target="_blank" rel="noopener noreferrer" data-i18n="viewRepo">View repository ↗</a>
+              <a href="https://github.com/fwilhelmy/Memoire-FelixWilhelmy" target="_blank" rel="noopener noreferrer" data-i18n="thesis">Master's thesis ↗</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="card-top"><span class="project-type" data-i18n="frType">Natural language · Data systems</span><span class="tech">Python · SQLite · LLMs</span></div>
+            <h3>FR2SQL</h3>
+            <p data-i18n="frDesc">A French-language Text-to-SQL prototype that connects questions to database schemas using semantic matching and language-model prompting. Includes schema inspection and evaluation tooling for Spider-FR.</p>
+            <div class="project-links">
+              <a href="https://github.com/fwilhelmy/FR2SQL" target="_blank" rel="noopener noreferrer" data-i18n="viewRepo">View repository ↗</a>
+              <a href="https://github.com/fwilhelmy/FR2SQL/tree/main/reports" target="_blank" rel="noopener noreferrer" data-i18n="reports">Reports ↗</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="card-top"><span class="project-type" data-i18n="dlType">Deep learning · Architecture studies</span><span class="tech">PyTorch · Experiments</span></div>
+            <h3 data-i18n="dlTitle">Deep learning experiments</h3>
+            <p data-i18n="dlDesc">Hands-on implementations and research reports exploring image classification (ResNet, MLP-Mixer), language models (GPT, LSTM), and generative models (VAE, diffusion). Each repository includes code and reports.</p>
+            <div class="project-links">
+              <a href="https://github.com/fwilhelmy/img-classification-experiments" target="_blank" rel="noopener noreferrer" data-i18n="cvLink">Computer vision ↗</a>
+              <a href="https://github.com/fwilhelmy/llm-experiments" target="_blank" rel="noopener noreferrer" data-i18n="llmLink">Language models ↗</a>
+              <a href="https://github.com/fwilhelmy/genai-experiments" target="_blank" rel="noopener noreferrer" data-i18n="genLink">Generative AI ↗</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="portfolio-section" aria-labelledby="more-title">
+        <div class="section-heading">
+          <p class="section-kicker" data-i18n="moreKicker">Collaboration &amp; exploration</p>
+          <h2 id="more-title" data-i18n="moreTitle">Hackathons and research projects</h2>
+          <p data-i18n="moreIntro">Team projects from technical competitions alongside independent research follow-ups.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="card-top"><span class="project-type" data-i18n="yaleType">Yale YQuantum 2025 · 2nd place</span><span class="tech">Geospatial · QUBO</span></div>
+            <h3 data-i18n="yaleTitle">Wildfire resource allocation</h3>
+            <p data-i18n="yaleDesc">Co-developed a pipeline combining wildfire-risk map processing with constrained optimization to allocate limited response resources across high-risk areas.</p>
+            <div class="project-links"><a href="https://github.com/fwilhelmy/yquantum2025-taoquantum" target="_blank" rel="noopener noreferrer" data-i18n="viewRepo">View repository ↗</a></div>
+          </article>
+          <article class="project-card">
+            <div class="card-top"><span class="project-type">MIT iQuHack 2026 · IonQ</span><span class="tech">Python · Optimization</span></div>
+            <h3 data-i18n="mit26Title">Adaptive quantum-network strategy</h3>
+            <p data-i18n="mit26Desc">Co-developed modular entanglement-distillation circuits and a feedback-driven graph strategy for a stochastic competition with limited resources.</p>
+            <div class="project-links"><a href="https://github.com/fwilhelmy/mit-iquhack-2026" target="_blank" rel="noopener noreferrer" data-i18n="viewRepo">View repository ↗</a></div>
+          </article>
+          <article class="project-card">
+            <div class="card-top"><span class="project-type" data-i18n="partyType">iQuCodeFest 2025 · 1st place</span><span class="tech">Python · Qiskit</span></div>
+            <h3>Super Quantum Party</h3>
+            <p data-i18n="partyDesc">A playable quantum-inspired board game built with a team: quantum random walks for movement and gate-based mini-games that reshape the board.</p>
+            <div class="project-links"><a href="https://github.com/fwilhelmy/iqucodefest-2025" target="_blank" rel="noopener noreferrer" data-i18n="viewRepo">View repository ↗</a></div>
+          </article>
+          <article class="project-card">
+            <div class="card-top"><span class="project-type" data-i18n="photonicType">Research continuation · Financial ML</span><span class="tech">PennyLane · Time series</span></div>
+            <h3 data-i18n="photonicTitle">Photonic QLSTM forecasting</h3>
+            <p data-i18n="photonicDesc">A follow-up to a hackathon prototype: a reproducible pointwise quantum LSTM experiment for forecasting swaption volatility, with chronological evaluation and training fixes.</p>
+            <div class="project-links"><a href="https://github.com/fwilhelmy/photonic-qlstm-swaption" target="_blank" rel="noopener noreferrer" data-i18n="viewRepo">View repository ↗</a></div>
+          </article>
+          <article class="project-card">
+            <div class="card-top"><span class="project-type" data-i18n="milType">Mil'HaQ Fest 2025 · Best Effort Award</span><span class="tech">Finance · Quantum ML</span></div>
+            <h3 data-i18n="milTitle">Swaption volatility prediction</h3>
+            <p data-i18n="milDesc">A team hackathon exploration of photonic and classical recurrent networks for forecasting financial volatility surfaces; the starting point for the later QLSTM research.</p>
+            <div class="project-links"><a href="https://github.com/fwilhelmy/milhaq-fest-2025" target="_blank" rel="noopener noreferrer" data-i18n="viewRepo">View repository ↗</a></div>
+          </article>
+          <article class="project-card">
+            <div class="card-top"><span class="project-type">MIT iQuHack 2025 · IonQ</span><span class="tech">Quantum algorithms</span></div>
+            <h3 data-i18n="mit25Title">Constrained Max-Cut optimization</h3>
+            <p data-i18n="mit25Desc">A team solution exploring variational quantum imaginary-time evolution (varQITE) for a Max-Cut challenge with balance and connectivity constraints.</p>
+            <div class="project-links"><a href="https://github.com/fwilhelmy/iquhack2025-ionq" target="_blank" rel="noopener noreferrer" data-i18n="viewRepo">View repository ↗</a></div>
+          </article>
+        </div>
+        <p class="all-projects"><a href="https://github.com/fwilhelmy?tab=repositories" target="_blank" rel="noopener noreferrer" data-i18n="allProjects">Explore more public repositories on GitHub ↗</a></p>
+      </section>
       <noscript>
-        <p>JavaScript is required for the inline selector. You can open any version directly:</p>
+        <p>JavaScript is required for the résumé selector. Open any version directly / JavaScript est nécessaire pour le sélecteur. Ouvrez directement une version :</p>
         <p>
           <a href="resume_ml_en.pdf">Machine Learning (EN)</a> ·
           <a href="resume_ml_fr.pdf">Machine Learning (FR)</a> ·
@@ -214,22 +350,114 @@
       software: { en: "resume_software_en.pdf", fr: "resume_software_fr.pdf" }
     };
     const trackLabels = {
-      ml: "Machine Learning",
-      quantum: "Quantum Computing",
-      software: "Software Engineering"
+      en: { ml: "Machine Learning", quantum: "Quantum Computing", software: "Software Engineering" },
+      fr: { ml: "Apprentissage automatique", quantum: "Informatique quantique", software: "Génie logiciel" }
     };
     const languageLabels = { en: "English", fr: "Français" };
+    const translations = {
+      "en": {
+            "eyebrow": "Projects & résumé",
+            "intro": "Software engineer and recent research master's graduate at ÉTS, exploring machine learning, reliable software systems, and quantum computing.",
+            "focus": "Focus",
+            "selected": "Selected résumé",
+            "resumeNote": "Open the PDF in a new tab or download a copy.",
+            "openPdf": "Open PDF ↗",
+            "downloadPdf": "Download PDF ↓",
+            "workKicker": "Portfolio",
+            "workTitle": "Selected projects",
+            "workIntro": "Research tools, applied AI prototypes, and experiments where I put algorithms into practice.",
+            "qbType": "Master's research · ML engineering",
+            "qbDesc": "An experimentation and benchmarking platform I built from scratch to compare how classical, quantum, and hybrid image classifiers learn and respond to adversarial attacks. It brings model training, evaluation, and reproducible analysis into one configurable workflow.",
+            "viewRepo": "View repository ↗",
+            "thesis": "Master's thesis ↗",
+            "frType": "Natural language · Data systems",
+            "frDesc": "A French-language Text-to-SQL prototype that connects questions to database schemas using semantic matching and language-model prompting. Includes schema inspection and evaluation tooling for Spider-FR.",
+            "reports": "Reports ↗",
+            "dlType": "Deep learning · Architecture studies",
+            "dlTitle": "Deep learning experiments",
+            "dlDesc": "Hands-on implementations and research reports exploring image classification (ResNet, MLP-Mixer), language models (GPT, LSTM), and generative models (VAE, diffusion). Each repository includes code and reports.",
+            "cvLink": "Computer vision ↗",
+            "llmLink": "Language models ↗",
+            "genLink": "Generative AI ↗",
+            "moreKicker": "Collaboration & exploration",
+            "moreTitle": "Hackathons and research projects",
+            "moreIntro": "Team projects from technical competitions alongside independent research follow-ups.",
+            "yaleType": "Yale YQuantum 2025 · 2nd place",
+            "yaleTitle": "Wildfire resource allocation",
+            "yaleDesc": "Co-developed a pipeline combining wildfire-risk map processing with constrained optimization to allocate limited response resources across high-risk areas.",
+            "mit26Title": "Adaptive quantum-network strategy",
+            "mit26Desc": "Co-developed modular entanglement-distillation circuits and a feedback-driven graph strategy for a stochastic competition with limited resources.",
+            "partyType": "iQuCodeFest 2025 · 1st place",
+            "partyDesc": "A playable quantum-inspired board game built with a team: quantum random walks for movement and gate-based mini-games that reshape the board.",
+            "photonicType": "Research continuation · Financial ML",
+            "photonicTitle": "Photonic QLSTM forecasting",
+            "photonicDesc": "A follow-up to a hackathon prototype: a reproducible pointwise quantum LSTM experiment for forecasting swaption volatility, with chronological evaluation and training fixes.",
+            "milType": "Mil'HaQ Fest 2025 · Best Effort Award",
+            "milTitle": "Swaption volatility prediction",
+            "milDesc": "A team hackathon exploration of photonic and classical recurrent networks for forecasting financial volatility surfaces; the starting point for the later QLSTM research.",
+            "mit25Title": "Constrained Max-Cut optimization",
+            "mit25Desc": "A team solution exploring variational quantum imaginary-time evolution (varQITE) for a Max-Cut challenge with balance and connectivity constraints.",
+            "allProjects": "Explore more public repositories on GitHub ↗"
+      },
+      "fr": {
+            "eyebrow": "Projets et CV",
+            "intro": "Diplômé en génie logiciel et récemment d'une maîtrise recherche à l'ÉTS, je m'intéresse à l'apprentissage automatique, aux systèmes logiciels fiables et à l'informatique quantique.",
+            "focus": "Domaine",
+            "selected": "CV sélectionné",
+            "resumeNote": "Ouvrez le PDF dans un nouvel onglet ou téléchargez-en une copie.",
+            "openPdf": "Ouvrir le PDF ↗",
+            "downloadPdf": "Télécharger le PDF ↓",
+            "workKicker": "Portfolio",
+            "workTitle": "Projets sélectionnés",
+            "workIntro": "Outils de recherche, prototypes d'IA appliquée et expérimentations où je mets les algorithmes en pratique.",
+            "qbType": "Recherche de maîtrise · Ingénierie ML",
+            "qbDesc": "Plateforme d'expérimentation et d'évaluation que j'ai développée de A à Z pour comparer l'apprentissage et la robustesse adversariale de modèles d'images classiques, quantiques et hybrides. Elle réunit entraînement, évaluation et analyse reproductible dans un flux de travail configurable.",
+            "viewRepo": "Voir le dépôt ↗",
+            "thesis": "Mémoire de maîtrise ↗",
+            "frType": "Langage naturel · Systèmes de données",
+            "frDesc": "Prototype de génération de SQL à partir de questions en français, utilisant l'appariement sémantique et les prompts de modèles de langage pour relier les demandes aux schémas de bases de données. Comprend des outils d'inspection et d'évaluation sur Spider-FR.",
+            "reports": "Rapports ↗",
+            "dlType": "Apprentissage profond · Étude d'architectures",
+            "dlTitle": "Expérimentations en apprentissage profond",
+            "dlDesc": "Implémentations et rapports comparatifs sur la classification d'images (ResNet, MLP-Mixer), les modèles de langage (GPT, LSTM) et les modèles génératifs (VAE, diffusion). Chaque dépôt contient du code et des rapports.",
+            "cvLink": "Vision par ordinateur ↗",
+            "llmLink": "Modèles de langage ↗",
+            "genLink": "IA générative ↗",
+            "moreKicker": "Collaboration et exploration",
+            "moreTitle": "Hackathons et projets de recherche",
+            "moreIntro": "Projets d'équipe issus de compétitions techniques et prolongements de recherche indépendants.",
+            "yaleType": "Yale YQuantum 2025 · 2e place",
+            "yaleTitle": "Allocation de ressources contre les feux de forêt",
+            "yaleDesc": "Codéveloppement d'un pipeline combinant le traitement de cartes de risque d'incendie et l'optimisation sous contraintes pour répartir des ressources limitées dans les zones à risque.",
+            "mit26Title": "Stratégie adaptative pour un réseau quantique",
+            "mit26Desc": "Codéveloppement de circuits modulaires de distillation d'intrication et d'une stratégie sur graphe ajustée selon les résultats, pour une compétition stochastique aux ressources limitées.",
+            "partyType": "iQuCodeFest 2025 · 1re place",
+            "partyDesc": "Jeu de plateau quantique jouable réalisé en équipe : marches aléatoires quantiques pour les déplacements et mini-jeux à portes quantiques modifiant le plateau.",
+            "photonicType": "Poursuite de recherche · Finance et ML",
+            "photonicTitle": "Prévision avec un QLSTM photonique",
+            "photonicDesc": "Prolongement d'un prototype de hackathon : expérimentation reproductible d'un LSTM quantique local pour prévoir la volatilité des swaptions, avec évaluation chronologique et correctifs d'entraînement.",
+            "milType": "Mil'HaQ Fest 2025 · Prix Meilleur Effort",
+            "milTitle": "Prévision de la volatilité des swaptions",
+            "milDesc": "Exploration en équipe de réseaux récurrents photoniques et classiques pour prévoir des surfaces de volatilité financières, à l'origine des recherches QLSTM ultérieures.",
+            "mit25Title": "Optimisation Max-Cut sous contraintes",
+            "mit25Desc": "Projet d'équipe explorant l'évolution variationnelle en temps imaginaire quantique (varQITE) pour un défi Max-Cut avec contraintes d'équilibre et de connexité.",
+            "allProjects": "Explorer mes autres dépôts publics sur GitHub ↗"
+      }
+};
     let selectedTrack = "ml";
     let selectedLanguage = "en";
-
-    const preview = document.getElementById("pdf-preview");
     const selectedTitle = document.getElementById("selected-title");
     const openPdf = document.getElementById("open-pdf");
     const downloadPdf = document.getElementById("download-pdf");
 
-    function updateResume() {
+    function updatePage() {
       const file = pdfs[selectedTrack][selectedLanguage];
-      const title = trackLabels[selectedTrack] + " · " + languageLabels[selectedLanguage];
+      const title = trackLabels[selectedLanguage][selectedTrack] + " · " + languageLabels[selectedLanguage];
+      document.documentElement.lang = selectedLanguage;
+      document.querySelectorAll("[data-i18n]").forEach(element => {
+        const translation = translations[selectedLanguage][element.dataset.i18n];
+        if (translation !== undefined) element.textContent = translation;
+      });
       document.querySelectorAll("[data-track]").forEach(button => {
         button.setAttribute("aria-pressed", String(button.dataset.track === selectedTrack));
       });
@@ -237,28 +465,26 @@
         button.setAttribute("aria-pressed", String(button.dataset.language === selectedLanguage));
       });
       selectedTitle.textContent = title;
-      preview.title = trackLabels[selectedTrack] + " résumé in " + languageLabels[selectedLanguage];
-      preview.src = file;
       openPdf.href = file;
       downloadPdf.href = file;
+      openPdf.setAttribute("aria-label", translations[selectedLanguage].openPdf + " — " + title);
+      downloadPdf.setAttribute("aria-label", translations[selectedLanguage].downloadPdf + " — " + title);
+      document.title = selectedLanguage === "fr" ? "Félix Wilhelmy | Projets et CV" : "Félix Wilhelmy | Projects & Résumé";
     }
 
     document.querySelectorAll("[data-track]").forEach(button => {
       button.addEventListener("click", () => {
-        if (selectedTrack !== button.dataset.track) {
-          selectedTrack = button.dataset.track;
-          updateResume();
-        }
+        selectedTrack = button.dataset.track;
+        updatePage();
       });
     });
     document.querySelectorAll("[data-language]").forEach(button => {
       button.addEventListener("click", () => {
-        if (selectedLanguage !== button.dataset.language) {
-          selectedLanguage = button.dataset.language;
-          updateResume();
-        }
+        selectedLanguage = button.dataset.language;
+        updatePage();
       });
     });
+    updatePage();
   </script>
 </body>
 </html>
