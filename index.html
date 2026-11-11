@@ -187,6 +187,8 @@
     .project-links a, .all-projects a { color: #e2edff; font-size: .87rem; font-weight: 650; text-decoration: none; }
     .project-links a:hover, .all-projects a:hover { color: #fff; text-decoration: underline; text-underline-offset: 4px; }
     .all-projects { margin: 22px 0 0; text-align: center; }
+    .project-card.solo-project { grid-column: 1 / -1; }
+    .source-note { margin-top: 20px !important; color: var(--muted) !important; font-size: .8rem !important; }
 
     /* GitHub mark for repository links, including the profile link in the footer.
        A CSS mask keeps the SVG decorative and does not interfere with language updates. */
@@ -294,6 +296,26 @@
         </div>
       </section>
 
+      <section class="portfolio-section" id="software-analytics" aria-labelledby="software-analytics-title">
+        <div class="section-heading">
+          <p class="section-kicker" data-i18n="softwareKicker">Software development</p>
+          <h2 id="software-analytics-title" data-i18n="softwareTitle">Software &amp; analytics</h2>
+          <p data-i18n="softwareIntro">Tools built to turn complex data into practical insights.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project-card solo-project">
+            <div class="card-top"><span class="project-type" data-i18n="scrimType">Independent project · Esports analytics</span></div>
+            <h3>Scrimlytics</h3>
+            <p data-i18n="scrimDesc">Built an Overwatch scrimmage analytics platform that transforms match logs into structured data, player and team metrics, and interactive dashboards. Supports fight and composition analysis, statistical comparisons, and automated reports for coaching decisions.</p>
+            <div class="project-stack">
+              <div class="stack-row"><span class="stack-label" data-i18n="technologies">Technologies</span><span>Python · SQL · DuckDB · pandas · Streamlit</span></div>
+              <div class="stack-row"><span class="stack-label" data-i18n="concepts">Concepts</span><span>Data Pipelines · Statistical Analysis · Data Visualization</span></div>
+            </div>
+            <p class="source-note" data-i18n="scrimPrivate">Source code currently in a private repository.</p>
+          </article>
+        </div>
+      </section>
+
       <section class="portfolio-section" id="deep-learning" aria-labelledby="deep-learning-title">
         <div class="section-heading">
           <p class="section-kicker" data-i18n="deepKicker">Experiments</p>
@@ -302,7 +324,7 @@
         </div>
         <div class="project-grid">
           <article class="project-card">
-            <div class="card-top"><span class="project-type" data-i18n="cvType">Computer vision</span></div>
+            <div class="card-top"><span class="project-type" data-i18n="cvType">MILA / Université de Montréal</span></div>
             <h3 data-i18n="cvTitle">Image classification architectures</h3>
             <p data-i18n="cvDesc">Implemented and compared MLP, ResNet, and MLP-Mixer architectures on CIFAR-10 to study accuracy, training dynamics, and architecture trade-offs, documenting the experiments in technical reports.</p>
             <div class="project-stack">
@@ -313,7 +335,7 @@
               <a href="https://github.com/fwilhelmy/img-classification-experiments/tree/main/report" target="_blank" rel="noopener noreferrer" data-i18n="viewReports">Reports ↗</a></div>
           </article>
           <article class="project-card">
-            <div class="card-top"><span class="project-type" data-i18n="llmType">Language modeling</span></div>
+            <div class="card-top"><span class="project-type" data-i18n="llmType">MILA / Université de Montréal</span></div>
             <h3 data-i18n="llmTitle">Language model architectures</h3>
             <p data-i18n="llmDesc">Implemented LSTM and GPT sequence models and experimented with how arithmetic learning changes under different training curricula. Includes implementation code and research reports.</p>
             <div class="project-stack">
@@ -324,7 +346,7 @@
               <a href="https://github.com/fwilhelmy/llm-experiments/tree/main/reports" target="_blank" rel="noopener noreferrer" data-i18n="viewReports">Reports ↗</a></div>
           </article>
           <article class="project-card">
-            <div class="card-top"><span class="project-type" data-i18n="genType">Generative AI</span></div>
+            <div class="card-top"><span class="project-type" data-i18n="genType">MILA / Université de Montréal</span></div>
             <h3 data-i18n="genTitle">Generative model architectures</h3>
             <p data-i18n="genDesc">Implemented and experimented with variational autoencoders, diffusion models, and classifier-free guidance, with training code, notebooks, and research reports.</p>
             <div class="project-stack">
@@ -458,13 +480,13 @@
         "mcType": "McGill University · Douglas Research Centre (2024)",
         "mcTitle": "AI visual stimuli for neuroscience",
         "mcDesc": "Developed a Python and DALL·E workflow for standardized image generation from French vocabulary, supporting cognitive language-comprehension research. Tested an end-to-end pilot with 20 words and gathered researcher feedback.",
-        "cvType": "Computer vision",
+        "cvType": "MILA / Université de Montréal",
         "cvTitle": "Image classification architectures",
         "cvDesc": "Implemented and compared MLP, ResNet, and MLP-Mixer architectures on CIFAR-10 to study accuracy, training dynamics, and architecture trade-offs, documenting the experiments in technical reports.",
-        "llmType": "Language modeling",
+        "llmType": "MILA / Université de Montréal",
         "llmTitle": "Language model architectures",
         "llmDesc": "Implemented LSTM and GPT sequence models and experimented with how arithmetic learning changes under different training curricula. Includes implementation code and research reports.",
-        "genType": "Generative AI",
+        "genType": "MILA / Université de Montréal",
         "genTitle": "Generative model architectures",
         "genDesc": "Implemented and experimented with variational autoencoders, diffusion models, and classifier-free guidance, with training code, notebooks, and research reports.",
         "yaleType": "Yale University · YQuantum 2025 · 2nd place",
@@ -489,7 +511,13 @@
         "resumeNote": "Open the PDF in a new tab or download a copy.",
         "openPdf": "Open PDF ↗",
         "downloadPdf": "Download PDF ↓",
-        "allProjects": "Explore more public repositories on GitHub ↗"
+        "allProjects": "Explore more public repositories on GitHub ↗",
+        "softwareKicker": "Software development",
+        "softwareTitle": "Software & analytics",
+        "softwareIntro": "Tools built to turn complex data into practical insights.",
+        "scrimType": "Independent project · Esports analytics",
+        "scrimDesc": "Built an Overwatch scrimmage analytics platform that transforms match logs into structured data, player and team metrics, and interactive dashboards. Supports fight and composition analysis, statistical comparisons, and automated reports for coaching decisions.",
+        "scrimPrivate": "Source code currently in a private repository."
     },
     "fr": {
         "mlTrack": "Apprentissage automatique",
@@ -519,13 +547,13 @@
         "mcType": "Université McGill · Centre de recherche Douglas (2024)",
         "mcTitle": "Stimuli visuels par IA pour les neurosciences",
         "mcDesc": "Développement d'un pipeline Python et DALL·E pour générer des images standardisées à partir de vocabulaire français pour la recherche en compréhension du langage. Essai complet sur 20 mots et prise en compte des commentaires de l'équipe de recherche.",
-        "cvType": "Vision par ordinateur",
+        "cvType": "MILA / Université de Montréal",
         "cvTitle": "Architectures de classification d'images",
         "cvDesc": "Implémentation et comparaison des architectures MLP, ResNet et MLP-Mixer sur CIFAR-10 pour étudier la précision, la dynamique d'entraînement et les compromis architecturaux, avec rapports techniques.",
-        "llmType": "Modèles de langage",
+        "llmType": "MILA / Université de Montréal",
         "llmTitle": "Architectures de modèles de langage",
         "llmDesc": "Implémentation de modèles séquentiels LSTM et GPT et expérimentation de leur apprentissage de l'arithmétique selon différents programmes d'entraînement. Inclut le code et des rapports de recherche.",
-        "genType": "IA générative",
+        "genType": "MILA / Université de Montréal",
         "genTitle": "Architectures de modèles génératifs",
         "genDesc": "Implémentation et expérimentation d'autoencodeurs variationnels, de modèles de diffusion et du guidage sans classificateur, avec code d'entraînement, notebooks et rapports.",
         "yaleType": "Université Yale · YQuantum 2025 · 2e place",
@@ -550,7 +578,13 @@
         "resumeNote": "Ouvrez le PDF dans un nouvel onglet ou téléchargez-en une copie.",
         "openPdf": "Ouvrir le PDF ↗",
         "downloadPdf": "Télécharger le PDF ↓",
-        "allProjects": "Explorer mes autres dépôts publics sur GitHub ↗"
+        "allProjects": "Explorer mes autres dépôts publics sur GitHub ↗",
+        "softwareKicker": "Développement logiciel",
+        "softwareTitle": "Logiciels et analytique",
+        "softwareIntro": "Des outils pour transformer des données complexes en informations utiles.",
+        "scrimType": "Projet indépendant · Analytique esport",
+        "scrimDesc": "Développement d'une plateforme d'analyse des parties d'entraînement d'Overwatch qui transforme les journaux de match en données structurées, statistiques de joueurs et d'équipes et tableaux de bord interactifs. Comprend l'analyse des combats et des compositions, des comparaisons statistiques et des rapports automatisés pour appuyer les décisions d'entraînement.",
+        "scrimPrivate": "Le code source se trouve actuellement dans un dépôt privé."
     }
 };
     let selectedTrack = "ml";
